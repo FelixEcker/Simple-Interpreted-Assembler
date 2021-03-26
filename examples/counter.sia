@@ -1,0 +1,51 @@
+CON_APP $0 $1 CHR_f
+CON_APP $0 $1 CHR_o
+CON_APP $0 $1 CHR_r
+CON_APP $0 $1 CHR_!_
+CON_APP $0 $1 CHR_l
+CON_APP $0 $1 CHR_o
+CON_APP $0 $1 CHR_o
+CON_APP $0 $1 CHR_p
+CON_APP $0 $1 CHR_!_
+CON_APP $0 $1 CHR_e
+CON_APP $0 $1 CHR_x
+CON_APP $0 $1 CHR_a
+CON_APP $0 $1 CHR_m
+CON_APP $0 $1 CHR_p
+CON_APP $0 $1 CHR_l
+CON_APP $0 $1 CHR_e
+CON_APP $0 $1 CHR_NL
+
+SET $0 $0
+SET $1 $FF
+SET $2 $1
+
+SET $3 $0
+SET $4 $0
+
+SET $5 $3
+SET $6 $5
+
+:Loop
+CMP % $0 $5
+CPY_REG $0 $3
+
+CMP % $0 $6
+CPY_REG $0 $4
+
+CMP = $3 $4
+JNE _NotFizzbuzz
+
+ADD $2 $0 $0
+
+CMP = $0 $1
+JNE _Loop
+JE _Exit
+
+:NotFizzbuzz
+CON_APP $0 $1 CHR_F
+CMP = $0 $1
+JNE _Loop
+JE _Exit
+
+:Exit

@@ -1,0 +1,27 @@
+SET $0 $0
+SET $1 $FF
+SET $2 $1
+
+SET $3 $0
+SET $4 $1
+SET $5 $0
+
+CON_APP $1 $0 $3
+CON_APP $1 $0 $4
+
+:Loop
+
+ADD $3 $4 $5
+CON_APP $1 $0 $5
+CON_APP $0 $1 CHR_NL
+
+CPY $4 $3
+CPY $5 $4
+ADD $2 $0 $0
+
+CMP = $0 $1
+JE _Exit
+JNE _Loop
+
+
+:Exit

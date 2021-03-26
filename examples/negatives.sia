@@ -1,0 +1,4 @@
+SET $0 CHR_a
+SET $1 CHR_!_
+INT_NEG
+SET $2 $FF
